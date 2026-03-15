@@ -1055,6 +1055,7 @@ footer {
 }
 .footer-copy { font-size: .75rem; color: rgba(255,255,255,.45); letter-spacing: .05em; }
 
+
 /* ─── ANIMATIONS ────────────────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
