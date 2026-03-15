@@ -811,6 +811,10 @@ section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
   border: 1px solid var(--line);
   background: transparent !important;
 }
+.cs-img-placeholder.cs-media.transparent:has(img) {
+  border: none;
+  box-shadow: none;
+}
 .cs-img-placeholder .placeholder-icon { font-size: 1.75rem; opacity: .4; }
 .cs-img-placeholder .placeholder-label {
   font-size: .7rem; font-weight: 500; letter-spacing: .06em;
