@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J75JJMD9X3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J75JJMD9X3');
+</script>
+<title>GRAIL Real Time Clinical Portal — Saeam Kwon</title>
+<meta name="description" content="Case study: Designed GRAIL's provider portal enabling healthcare organizations to submit and manage test orders digitally, reducing manual order corrections by ~80%.">
+<meta property="og:title" content="GRAIL Real Time Clinical Portal — Saeam Kwon">
+<meta property="og:description" content="Replacing fax-based clinical orders with a digital provider platform for healthcare organizations.">
+<meta property="og:url" content="https://saeamkwon.com/grail-clinical">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://saeamkwon.com/grail-clinical">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Work</a>
+  <a href="/about">About</a>
+  <a href="https://www.dropbox.com/scl/fi/acd9gxkntgel7m8eg4yvk/Kwon_Saeam_Product_Designer_Resume.pdf?rlkey=7f3dukywzlxysol39kkq1huh7&st=8g2768sp&dl=0" target="_blank">Resume</a>
+</div>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="/">Saeam Kwon</a>
+  <ul class="nav-links">
+    <li><a href="/" id="navWork" class="active">Work</a></li>
+    <li><a href="/about" id="navAbout">About</a></li>
+    <li><a href="https://www.dropbox.com/scl/fi/acd9gxkntgel7m8eg4yvk/Kwon_Saeam_Product_Designer_Resume.pdf?rlkey=7f3dukywzlxysol39kkq1huh7&st=8g2768sp&dl=0" target="_blank">Resume</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════ PASSWORD MODAL ══════════ -->
+<div class="pw-overlay open" id="pwOverlay">
+  <div class="pw-modal">
+    <div class="pw-eyebrow">Protected Content</div>
+    <div class="pw-title">This case study is password protected</div>
+    <p class="pw-desc">This project contains confidential work. Please enter the password to continue.</p>
+    <div class="pw-input-wrap">
+      <input class="pw-input" id="pwInput" type="password" placeholder="Enter password" autocomplete="off" />
+    </div>
+    <div class="pw-error" id="pwError">Incorrect password — please try again.</div>
+    <div class="pw-actions">
+      <button class="pw-submit" id="pwSubmit">Unlock</button>
+      <a href="/" class="pw-cancel" id="pwCancel">Cancel</a>
+    </div>
+  </div>
+</div>
+
+<div id="protectedContent" style="display:none;">
+
+  <div class="cs-hero-wrap">
+    <div class="cs-hero-bg-svg">
+      <img src="../case-studies/grail-provider-portal/images/hero-clinical.svg" alt="" />
+    </div>
+    <div style="max-width:1200px;margin:0 auto;padding:2rem clamp(1.5rem,5vw,4rem) 0;position:relative;z-index:2;">
+      <a href="/" class="cs-back">Back to Work</a>
+    </div>
+    <div class="cs-hero">
+      <div class="cs-hero-text reveal">
+        <div class="cs-company">GRAIL</div>
+        <h1 class="cs-title">Real Time Clinical Portal</h1>
+        <div class="cs-meta">
+          <div class="cs-meta-row"><span class="cs-meta-label">Role</span><span>Senior Product Designer</span></div>
+          <div class="cs-meta-row"><span class="cs-meta-label">Team</span><span>Product, Engineering, Clinical Ops</span></div>
+          <div class="cs-meta-row"><span class="cs-meta-label">Timeline</span><span>2.5 weeks</span></div>
+          <div class="cs-meta-row"><span class="cs-meta-label">Platform</span><span>Web (Desktop)</span></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /cs-hero-wrap -->
+
+  <div class="cs-summary">
+    <div class="cs-summary-inner">
+      <div class="cs-summary-text reveal">
+        <p>GRAIL's provider teams were managing clinical orders through a fragmented mix of fax, email, and manual data entry. This project replaced that workflow with a centralized real-time portal that gave providers full visibility into order status, specimen logistics, and results — while eliminating the manual correction loop that had been consuming ops resources.</p>
+      </div>
+      <div class="cs-stat reveal reveal-delay-1">
+        <div class="cs-stat-num"><em>~80%</em></div>
+        <div class="cs-stat-label">Reduction in total manual order corrections</div>
+      </div>
+      <div class="cs-stat reveal reveal-delay-2">
+        <div class="cs-stat-num"><em>Days → Minutes</em></div>
+        <div class="cs-stat-label">Faster order submission vs. fax-based process</div>
+      </div>
+      <div class="cs-stat reveal reveal-delay-3">
+        <div class="cs-stat-num"><em>100%</em></div>
+        <div class="cs-stat-label">HIPAA-compliant digital order trail replacing paper fax</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">01 — Context</div>
+    <h2 class="cs-h2">Replacing a fax-based system with a real-time clinical operations platform</h2>
+    <div class="cs-two-col">
+      <div>
+        <div class="cs-body">
+          <p>Healthcare provider organizations ordering Galleri tests were relying on fax and phone to submit orders, check status, and resolve issues. GRAIL's ops team was spending significant time manually entering and correcting these submissions and providers had no visibility into what happened after they sent a fax.</p>
+          <p>The real-time Provider Portal was designed to give providers a self-service interface that handled the full order lifecycle digitally, with live status tracking and automated validation.</p>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <div class="cs-col-label">Starting roadblocks</div>
+          <ul class="cs-list" style="margin-top:.75rem;">
+            <li>Fax process was slow, manual, and error-prone</li>
+            <li>Very manual process to resolve errors</li>
+            <li>85% of faxed forms had errors and required a follow up</li>
+            <li>Average of 3-5 days from fax to confirmed order</li>
+          </ul>
+        </div>
+        <div class="cs-body" style="margin-top:1.5rem;">
+          <p>The problems we faced was clear that scalability was the key issue of this manual process both internally and externally. We needed a scalable way for providers to submit eligible prescriptions directly into our lab system.</p>
+        </div>
+      </div>
+      <div>
+        <div class="cs-col-label">Context flow — existing process</div>
+        <div class="cs-flow" style="margin-top:.75rem;flex-direction:column;align-items:flex-start;gap:.5rem;">
+          <div style="display:flex;align-items:center;gap:0;">
+            <div class="cs-flow-box">Provider fills out test requisition form</div>
+            <div class="cs-flow-arrow">→</div>
+            <div class="cs-flow-box">Fax to GRAIL</div>
+            <div class="cs-flow-arrow">→</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0;">
+            <div class="cs-flow-box">Internal team manually enters info into system</div>
+            <div class="cs-flow-arrow">→</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0;">
+            <div class="cs-flow-box highlight">Errors flagged</div>
+            <div class="cs-flow-arrow">→</div>
+            <div class="cs-flow-box highlight">Contact provider for correction</div>
+            <div class="cs-flow-arrow">→</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0;">
+            <div class="cs-flow-box highlight">Contact patient for information</div>
+            <div class="cs-flow-arrow">→</div>
+            <div class="cs-flow-box">Test gets processed</div>
+          </div>
+          <div style="font-size:.75rem;color:var(--accent);margin-top:.25rem;">⚠ Avg. 1-3 days to resolve errored test order</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">02 — Initial Assumptions & Learnings</div>
+    <h2 class="cs-h2">What we expected vs. what we found</h2>
+    <div class="cs-body">
+      <p>At first, the solution seemed obvious: Build a digital version of the paper requisition form. We conducted research sessions with our user base, providers, nurses, and practice admins, to understand how they currently handled submissions and results and if our hypothesis was the right direction.</p>
+    </div>
+    <div class="cs-insights" style="margin-top:1.5rem;">
+      <div class="cs-insight-card reveal reveal-delay-1">
+        <div class="cs-insight-tag">Assumption</div>
+        <div class="cs-insight-text">Providers would need a digital version of the paper requisition form to conveniently submit their test orders to us directly.</div>
+      </div>
+      <div class="cs-insight-card reveal reveal-delay-2">
+        <div class="cs-insight-tag">Reality</div>
+        <div class="cs-insight-text">Our assumptions were correct in needing a digital requisition form but what we didn't anticipate were the requirements and regulations surrounding this solution.</div>
+      </div>
+      <div class="cs-insight-card reveal reveal-delay-3">
+        <div class="cs-insight-tag">Problem</div>
+        <div class="cs-insight-text">Digitizing the form wasn't just about convenience. It meant that we were starting to dabble into digital HIPAA regulations where strict access control and scoped permissions were necessary.</div>
+      </div>
+      <div class="cs-insight-card reveal reveal-delay-4">
+        <div class="cs-insight-tag">Insight</div>
+        <div class="cs-insight-text">The real opportunity was not form digitization. It was infrastructure modernization.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">03 — Key Designs</div>
+    <h2 class="cs-h2">Three design decisions that drove outcomes</h2>
+    <div class="cs-change reveal">
+      <div class="cs-change-label">Key Design 1</div>
+      <h3 class="cs-change-h3">Real time form validation</h3>
+      <p class="cs-change-desc">The fax was open to incomplete and incorrectly filled out fields. The digital form in the portal were created with specific validations in mind. For example, we learned that about 85% of faxes were missing the patient's email address. Providers did not know that field is a hard requirement on GRAIL's end to start processing the order. The email address field was created with email validation APIs to ensure the validity and format of the inputs.</p>
+      <p class="cs-change-desc">Not only did these validations effectively eliminate incomplete or incorrectly filled out forms, but they also lifted the burden of manual re-entry of information and manual error correction workflows for our internal team. The digital form placed the responsibility of checking the information to the portal user rather than our internal team who are not really part of the process.</p>
+      <div class="cs-before-after" style="grid-template-columns:1fr 2fr;">
+        <div>
+          <div style="font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.75rem;">Before</div>
+          <div class="cs-img-placeholder cs-media clickable" style="aspect-ratio:auto;min-height:220px;">
+            <img src="../case-studies/grail-provider-portal/images/gpr-paper-trf.png" alt="Paper test requisition form">
+          </div>
+        </div>
+        <div>
+          <div style="font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#3B5BDB;margin-bottom:.75rem;">After</div>
+          <div class="cs-img-placeholder cs-media clickable" style="aspect-ratio:auto;min-height:220px;">
+            <img src="../case-studies/grail-provider-portal/images/gpr-etrf-validation.png" alt="Digital form with inline validation">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-change reveal">
+      <div class="cs-change-label">Key Design 2</div>
+      <h3 class="cs-change-h3">Role-based access & scope based notifications</h3>
+      <p class="cs-change-desc">To be compliant under digital HIPAA law and regulations, we made sure to fully flesh out the complexities surrounding access controls and scoped notifications.</p>
+      <p class="cs-change-desc">This was crucial in preventing data overexposure while keeping workflows simple. Below you can see the workflow of access control.</p>
+
+      <div style="margin-top:2rem;">
+        <div style="font-size:.6875rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.75rem;">Role Based Access</div>
+        <div class="cs-flow" style="margin-top:0;">
+          <div class="cs-flow-box">① Admin creates user</div>
+          <div class="cs-flow-arrow">→</div>
+          <div class="cs-flow-box">② User created as unactivated</div>
+          <div class="cs-flow-arrow">→</div>
+          <div class="cs-flow-box">③ Email sent to new user</div>
+          <div class="cs-flow-arrow">→</div>
+          <div class="cs-flow-box">④ New user activates account</div>
+          <div class="cs-flow-arrow">→</div>
+          <div class="cs-flow-box">⑤ Admin can edit user permissions</div>
+        </div>
+        <div class="cs-img-gallery" style="margin-top:1.5rem;">
+          <div class="cs-img-placeholder cs-media clickable">
+            <img src="../case-studies/grail-provider-portal/images/gpr-access-step-1.png" alt="Access control step 1">
+          </div>
+          <div class="cs-img-placeholder cs-media clickable">
+            <img src="../case-studies/grail-provider-portal/images/gpr-access-step-2.png" alt="Access control step 2">
+          </div>
+          <div class="cs-img-placeholder cs-media clickable">
+            <img src="../case-studies/grail-provider-portal/images/gpr-access-step-3.png" alt="Access control step 3">
+          </div>
+          <div class="cs-img-placeholder cs-media clickable">
+            <img src="../case-studies/grail-provider-portal/images/gpr-access-step-4.png" alt="Access control step 4">
+          </div>
+          <div class="cs-img-placeholder cs-media clickable">
+            <img src="../case-studies/grail-provider-portal/images/gpr-access-step-5.png" alt="Access control step 5">
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <div style="font-size:.6875rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.75rem;">Provider Scoped Notifications</div>
+        <div class="cs-img-gallery">
+          <div class="cs-img-placeholder cs-media clickable">
+            <img src="../case-studies/grail-provider-portal/images/gpr-notifications-step-1.png" alt="Notifications step 1">
+          </div>
+          <div class="cs-img-placeholder cs-media clickable">
+            <img src="../case-studies/grail-provider-portal/images/gpr-notifications-step-2.png" alt="Notifications step 2">
+          </div>
+          <div class="cs-img-placeholder cs-media clickable">
+            <img src="../case-studies/grail-provider-portal/images/gpr-notifications-step-3.png" alt="Notifications step 3">
+          </div>
+          <div class="cs-img-placeholder cs-media clickable">
+            <img src="../case-studies/grail-provider-portal/images/gpr-notifications-step-4.png" alt="Notifications step 4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-change reveal">
+      <div class="cs-change-label">Key Design 3</div>
+      <h3 class="cs-change-h3">Streamlining API Connections</h3>
+      <p class="cs-change-desc">Larger provider organizations wanted to connect their existing EHR systems directly to GRAIL's order management system via API. We designed a configuration that allowed admins to map their EHR fields to GRAIL's order schema.</p>
+      <div style="margin-top:2rem;">
+        <div class="cs-img-placeholder cs-media clickable" style="aspect-ratio:16/9;">
+          <img src="../case-studies/grail-provider-portal/images/gpr-integrations.png" alt="API integrations configuration">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-impact">
+    <div class="cs-impact-inner">
+      <div class="cs-impact-label">Impact</div>
+      <div class="cs-impact-stats">
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>200+</em></div>
+          <div class="cs-impact-desc">Provider organizations onboarded</div>
+        </div>
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>8 Mins</em></div>
+          <div class="cs-impact-desc">Average time to complete and submit an order vs average of 3-5 days with fax order</div>
+        </div>
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>70%</em></div>
+          <div class="cs-impact-desc">Organizations fully transitioned within one week of onboarding</div>
+        </div>
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>100%</em></div>
+          <div class="cs-impact-desc">HIPAA-compliant digital audit trail on every order</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-reflection">
+    <div class="cs-reflection-inner reveal">
+      <div class="cs-section-num" style="padding:0;margin-bottom:.5rem;">04 — Impact</div>
+      <h2 class="cs-h2">What this project taught me about B2B healthcare design</h2>
+      <div class="cs-body">
+        <p>The most important lesson from the Provider Portal was that workflow trust matters more than feature completeness. Providers didn't need every capability on day one. They needed to trust that the system was accurate, that their submissions weren't falling into a void, and that when something went wrong they'd know immediately and know how to fix it.</p>
+        <p>Designing the inline validation layer was technically straightforward, but getting the error copy right, specific, non-blaming, actionable, required more iteration than any other design element on the page. Clinical staff are time-pressured and error-averse. Every message had to feel like a helpful guide, not a system rejection.</p>
+        <p>I also learned that role-based access in B2B platforms is often under-designed. Most tools treat it as a permissions matrix buried in settings. We surfaced it as a first-class onboarding step.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-name">Saeam Kwon</div>
+    <a class="footer-linkedin" href="https://linkedin.com" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <p class="footer-copy">© 2026 by Saeam Kwon.</p>
+  </footer>
+
+</div><!-- /protectedContent -->
+
+<!-- ══════════ LIGHTBOX ══════════ -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+</div>
+
+<script src="../scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J75JJMD9X3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J75JJMD9X3');
+</script>
+<title>AxleHire Client Self-Service Portal — Saeam Kwon</title>
+<meta name="description" content="Case study: Designed AxleHire's first client operations portal, giving enterprise customers real-time delivery visibility and reducing dispatch support requests by ~80%.">
+<meta property="og:title" content="AxleHire Client Self-Service Portal — Saeam Kwon">
+<meta property="og:description" content="Unlocking operational scalability with a client self-service delivery management portal.">
+<meta property="og:url" content="https://saeamkwon.com/axlehire-client">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://saeamkwon.com/axlehire-client">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Work</a>
+  <a href="/about">About</a>
+  <a href="https://www.dropbox.com/scl/fi/acd9gxkntgel7m8eg4yvk/Kwon_Saeam_Product_Designer_Resume.pdf?rlkey=7f3dukywzlxysol39kkq1huh7&st=8g2768sp&dl=0" target="_blank">Resume</a>
+</div>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="/">Saeam Kwon</a>
+  <ul class="nav-links">
+    <li><a href="/" id="navWork" class="active">Work</a></li>
+    <li><a href="/about" id="navAbout">About</a></li>
+    <li><a href="https://www.dropbox.com/scl/fi/acd9gxkntgel7m8eg4yvk/Kwon_Saeam_Product_Designer_Resume.pdf?rlkey=7f3dukywzlxysol39kkq1huh7&st=8g2768sp&dl=0" target="_blank">Resume</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+  <div class="cs-hero-wrap">
+    <div class="cs-hero-bg-svg">
+      <img src="../case-studies/axlehire-client-app/images/hero-client.svg" alt="" />
+    </div>
+    <div style="max-width:1200px;margin:0 auto;padding:2rem clamp(1.5rem,5vw,4rem) 0;position:relative;z-index:2;">
+      <a href="/" class="cs-back">Back to Work</a>
+    </div>
+    <div class="cs-hero">
+      <div class="cs-hero-text reveal">
+        <div class="cs-company">AXLEHIRE (Now JITSU)</div>
+        <h1 class="cs-title">Client self-service delivery tracking portal</h1>
+        <div class="cs-meta">
+          <div class="cs-meta-row"><span class="cs-meta-label">Role</span><span>Lead Product Designer</span></div>
+          <div class="cs-meta-row"><span class="cs-meta-label">Team</span><span>Engineering, Client Success, Operations</span></div>
+          <div class="cs-meta-row"><span class="cs-meta-label">Timeline</span><span>3 weeks</span></div>
+          <div class="cs-meta-row"><span class="cs-meta-label">Platform</span><span>Web (Desktop)</span></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /cs-hero-wrap -->
+
+  <div class="cs-summary">
+    <div class="cs-summary-inner">
+      <div class="cs-summary-text reveal">
+        <p>AxleHire's enterprise clients — major retailers managing thousands of daily shipments — had no self-service visibility into their delivery operations. Every status check, exception report, and order modification required contacting AxleHire's dispatch team directly. This project designed the company's first client-facing operations portal, giving enterprise customers real-time delivery visibility and automated order ingestion while reducing dispatch support requests by ~80%.</p>
+      </div>
+      <div class="cs-stat reveal reveal-delay-1">
+        <div class="cs-stat-num"><em>~80%</em></div>
+        <div class="cs-stat-label">Reduction in dispatch support requests from enterprise clients</div>
+      </div>
+      <div class="cs-stat reveal reveal-delay-2">
+        <div class="cs-stat-num"><em>9.7/10</em></div>
+        <div class="cs-stat-label">Average customer satisfaction score post-launch</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">01 — Context & Problem</div>
+    <h2 class="cs-h2">Enterprise clients flying blind on their own deliveries</h2>
+    <div class="cs-two-col">
+      <div>
+        <div class="cs-col-label">From the client perspective</div>
+        <ul class="cs-list" style="margin-top:.75rem;">
+          <li>No real-time visibility into delivery status across their order volume</li>
+          <li>Exception management required calling or emailing AxleHire dispatch</li>
+          <li>Order ingestion was manual — CSV uploads via email to an ops coordinator</li>
+          <li>Reporting was available only on request, with 24–48hr turnaround</li>
+          <li>No ability to update delivery instructions or address corrections without dispatch</li>
+        </ul>
+      </div>
+      <div>
+        <div class="cs-col-label">Internal ops pain points</div>
+        <ul class="cs-list" style="margin-top:.75rem;">
+          <li>Dispatch team fielding 200+ client status inquiries per day</li>
+          <li>Manual order ingestion from CSV was error-prone and time-consuming</li>
+          <li>No audit trail for client-requested order changes</li>
+          <li>Client onboarding took 2–3 weeks due to manual setup processes</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:2rem;padding:1.5rem;background:var(--deep);border-radius:8px;text-align:center;">
+      <div style="font-family:var(--serif);font-style:italic;font-size:clamp(1.125rem,2.5vw,1.625rem);color:var(--ink);line-height:1.35;letter-spacing:-.02em;max-width:640px;margin:0 auto;">
+        Build the portal that makes our clients feel like they're running their own logistics operation.
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">02 — Discovery & Insights</div>
+    <h2 class="cs-h2">What enterprise clients actually needed</h2>
+    <div class="cs-body">
+      <p>We ran discovery sessions with 6 enterprise client accounts, ranging from a regional grocery chain to a national furniture retailer. Their operations contexts were very different, but their core needs converged on three themes.</p>
+    </div>
+    <div class="cs-insights" style="margin-top:1.5rem;">
+      <div class="cs-insight-card reveal reveal-delay-1">
+        <div class="cs-insight-tag">Key Finding 1</div>
+        <div class="cs-insight-text">Clients didn't need every data point — they needed the right signal. Exception alerts (failed deliveries, address issues, late routes) were more valuable than comprehensive tracking dashboards that required interpretation.</div>
+      </div>
+      <div class="cs-insight-card reveal reveal-delay-2">
+        <div class="cs-insight-tag">Key Finding 2</div>
+        <div class="cs-insight-text">Order ingestion was the highest friction point — not visibility. Several clients had dedicated coordinators whose primary job was reformatting order files to match AxleHire's CSV template. Automating this would free significant client-side resources.</div>
+      </div>
+    </div>
+    <div style="margin-top:1.25rem;padding:1.25rem 1.5rem;background:white;border:1px solid var(--line);border-radius:6px;border-left:3px solid var(--accent);" class="reveal reveal-delay-3">
+      <div style="font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;">Underlying need</div>
+      <div style="font-size:.875rem;color:var(--mid);font-weight:300;line-height:1.7;">Clients wanted to feel in control of their operations, not dependent on a third party for information about their own orders. The portal's emotional goal was autonomy — not just access to data.</div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">03 — Design Principles & Requirements</div>
+    <h2 class="cs-h2">The constraints that shaped every decision</h2>
+    <div class="cs-constraints">
+      <div class="cs-constraint"><strong>Clarity</strong>Information architecture optimized for exception identification — not data completeness. Clients should see what needs attention first.</div>
+      <div class="cs-constraint"><strong>Flexibility</strong>Portable to clients with different order volumes, different workflows, and different technical sophistication levels.</div>
+      <div class="cs-constraint"><strong>My team's sanity</strong>Every self-service action the portal enables is one fewer support contact for the dispatch team. Design for dispatch reduction.</div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">04 — Design Changes · Change 1</div>
+    <h2 class="cs-h2">Real-time map view of deliveries</h2>
+    <div class="cs-body">
+      <p>The centerpiece of the portal was a live delivery map showing all active routes, their current status, and any exceptions flagged in real time. Clients could filter by region, client account, date range, and exception type — moving from a high-level overview to an individual delivery in two clicks.</p>
+    </div>
+    <div style="margin-top:1.5rem;">
+      <div class="cs-img-placeholder cs-media transparent clickable" style="aspect-ratio:16/9;">
+        <img src="../case-studies/axlehire-client-app/images/ac-annotations.png" alt="Delivery map with annotations">
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-impact">
+    <div class="cs-impact-inner">
+      <div class="cs-impact-label">Impact — Real-time map view</div>
+      <div class="cs-impact-stats">
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>~80%</em></div>
+          <div class="cs-impact-desc">Fewer inbound client status inquiries to dispatch team</div>
+        </div>
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>Faster</em></div>
+          <div class="cs-impact-desc">Exception resolution — clients act on alerts directly without dispatch involvement</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">04 — Design Changes · Change 2</div>
+    <h2 class="cs-h2">Self-service CSV upload with real-time validation</h2>
+    <div class="cs-body">
+      <p>We designed an order ingestion interface that accepted any CSV format and used field-mapping logic to automatically match client columns to AxleHire's order schema. Unrecognized fields were surfaced for manual intervention. Validation errors appeared inline, per row, before submission.</p>
+    </div>
+    <div style="margin-top:2rem;max-width:1200px;">
+      <div class="cs-img-gallery">
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-client-app/images/ac-upload-default.png" alt="CSV upload default state">
+        </div>
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-client-app/images/ac-upload-modal.png" alt="CSV upload modal">
+        </div>
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-client-app/images/ac-upload-edit.png" alt="CSV upload field editing">
+        </div>
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-client-app/images/ac-upload-errors.png" alt="CSV upload validation errors">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-impact">
+    <div class="cs-impact-inner">
+      <div class="cs-impact-label">Impact — Self-service CSV</div>
+      <div class="cs-impact-stats">
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>Automated</em></div>
+          <div class="cs-impact-desc">Order ingestion — no coordinator involvement for standard uploads</div>
+        </div>
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>2–3 wks</em></div>
+          <div class="cs-impact-desc">Client onboarding time reduced to under 1 day for standard integrations</div>
+        </div>
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>Increased</em></div>
+          <div class="cs-impact-desc">Client ability to manage their own operations independently</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-reflection">
+    <div class="cs-reflection-inner reveal">
+      <div class="cs-section-num" style="padding:0;margin-bottom:.5rem;">05 — Final Outcomes</div>
+      <h2 class="cs-h2">What shipping this taught me about enterprise product design</h2>
+      <div class="cs-body">
+        <p>The client portal was the project that taught me how much enterprise product design is actually organizational design. The portal didn't just give clients visibility, it redistributed work that had been sitting entirely on AxleHire's internal ops team. That redistribution had implications for team structure and client contracts that went well beyond any individual screen.</p>
+        <p>The most unexpected outcome was how much the portal changed the client relationship itself. Clients who previously called daily stopped calling not because they didn't have questions, but because the portal answered them before they could form. Several clients reported that having visibility made them more patient with exceptions, not less. Seeing the operational complexity of last-mile delivery in real time gave them context that phone calls never could.</p>
+        <p>If I were starting this project over, I would have pushed harder for a dedicated exception management workflow earlier. The map view was powerful, but high-volume clients needed a task-oriented exception queue, not a spatial overview, to manage efficiently.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-name">Saeam Kwon</div>
+    <a class="footer-linkedin" href="https://linkedin.com" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <p class="footer-copy">© 2026 by Saeam Kwon.</p>
+  </footer>
+
+<!-- ══════════ LIGHTBOX ══════════ -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+</div>
+
+<script src="../scripts/main.js"></script>
+</body>
+</html>

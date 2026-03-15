@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J75JJMD9X3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J75JJMD9X3');
+</script>
+<title>AxleHire Last-Mile Driver App — Saeam Kwon</title>
+<meta name="description" content="Case study: Redesigned AxleHire's driver platform to support high-volume delivery operations, achieving 98.4% on-time delivery across 120k weekly deliveries.">
+<meta property="og:title" content="AxleHire Last-Mile Driver App — Saeam Kwon">
+<meta property="og:description" content="Designing the logistics workflow behind 98.4% on-time delivery at scale.">
+<meta property="og:url" content="https://saeamkwon.com/axlehire-driver">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://saeamkwon.com/axlehire-driver">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Work</a>
+  <a href="/about">About</a>
+  <a href="https://www.dropbox.com/scl/fi/acd9gxkntgel7m8eg4yvk/Kwon_Saeam_Product_Designer_Resume.pdf?rlkey=7f3dukywzlxysol39kkq1huh7&st=8g2768sp&dl=0" target="_blank">Resume</a>
+</div>
+
+<nav id="mainNav">
+  <a class="nav-logo" href="/">Saeam Kwon</a>
+  <ul class="nav-links">
+    <li><a href="/" id="navWork" class="active">Work</a></li>
+    <li><a href="/about" id="navAbout">About</a></li>
+    <li><a href="https://www.dropbox.com/scl/fi/acd9gxkntgel7m8eg4yvk/Kwon_Saeam_Product_Designer_Resume.pdf?rlkey=7f3dukywzlxysol39kkq1huh7&st=8g2768sp&dl=0" target="_blank">Resume</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+  <div class="cs-hero-wrap">
+    <div class="cs-hero-bg-svg">
+      <img src="../case-studies/axlehire-driver-app/images/hero-driver.svg" alt="" />
+    </div>
+    <div style="max-width:1200px;margin:0 auto;padding:2rem clamp(1.5rem,5vw,4rem) 0;position:relative;z-index:2;">
+      <a href="/" class="cs-back">Back to Work</a>
+    </div>
+    <div class="cs-hero">
+      <div class="cs-hero-text reveal">
+        <div class="cs-company">AXLEHIRE (Now JITSU)</div>
+        <h1 class="cs-title">Last-mile driver delivery app</h1>
+        <div class="cs-meta">
+          <div class="cs-meta-row"><span class="cs-meta-label">Role</span><span>Lead Product Designer</span></div>
+          <div class="cs-meta-row"><span class="cs-meta-label">Team</span><span>Engineering, Operations</span></div>
+          <div class="cs-meta-row"><span class="cs-meta-label">Timeline</span><span>2.5 weeks</span></div>
+          <div class="cs-meta-row"><span class="cs-meta-label">Platform</span><span>iOS & Android Mobile</span></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /cs-hero-wrap -->
+
+  <div class="cs-summary">
+    <div class="cs-summary-inner">
+      <div class="cs-summary-text reveal">
+        <p>AxleHire's whitelabel last-mile services were projected to grow 8x in volume as we expanded into new regions nationwide. However, the sudden growth was going to cause a huge burden on our internal teams as our Driver App was not equipped to handle the quick increase in volume. The driver app was completely redesigned with efficient workflows incorporating multi-package scanning and failure handling flows to scale reliably to 98.4% on-time delivery across 120k weekly deliveries.</p>
+      </div>
+      <div class="cs-stat reveal reveal-delay-1">
+        <div class="cs-stat-num"><em>98.4%</em></div>
+        <div class="cs-stat-label">On-time delivery rate achieved after launch</div>
+      </div>
+      <div class="cs-stat reveal reveal-delay-2">
+        <div class="cs-stat-num"><em>~30%</em></div>
+        <div class="cs-stat-label">Increase in successful deliveries</div>
+      </div>
+      <div class="cs-stat reveal reveal-delay-3">
+        <div class="cs-stat-num"><em>50%</em></div>
+        <div class="cs-stat-label">Decrease in driver support contacts per shift</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">01 — Business Context</div>
+    <h2 class="cs-h2">Building for reliability at 120k deliveries a week</h2>
+    <div class="cs-body">
+      <p>AxleHire (now Jitsu) operates as a last-mile carrier for clients including major retailers and e-commerce platforms. At the growth from 15k to 120k weekly deliveries, a 1% failure rate meant 1,200 failed packages per week — each one a support ticket, a customer complaint, and a potential client penalty.</p>
+      <p>The existing driver tooling wasn't built for this scale. Drivers were working around the app's limitations daily, creating informal workarounds that introduced inconsistency and made ops oversight nearly impossible.</p>
+    </div>
+    <div style="margin-top:1.5rem;">
+          <div class="cs-col-label" style="max-width:360px;">Even small inefficiencies compounded quickly</div>
+          <ul class="cs-list" style="margin-top:.75rem;">
+            <li>Larger assignments</li>
+            <li>More complex warehouse coordination</li>
+            <li>Tighter delivery windows</li>
+            <li>Growing enterprise client expectations</li>
+          </ul>
+        </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">02 — The Problem</div>
+    <h2 class="cs-h2">A workaround culture hiding a systemic tooling failure</h2>
+    <div class="cs-body">
+      <p>Driver interviews and ride-alongs revealed that the existing app was being used as a list reference, not an operational tool. Drivers had developed their own systems — sticky notes on dashboards, personal spreadsheets, group chats with dispatchers — to compensate for what the app couldn't do.</p>
+    </div>
+    <ul class="cs-list" style="max-width:640px;margin:1.25rem 0;">
+      <li>Manual package identification — drivers had to manually verify each package</li>
+      <li>Delivery location list — drivers decided to go their own route sequence</li>
+      <li>Failed delivery lost in the system — lots of packages went missing after attempts</li>
+      <li>End-of-shift reconciliation required calling dispatch — 20+ min per driver per day</li>
+    </ul>
+    <div style="margin-top:2rem;">
+      <div style="font-size:.6875rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.75rem;">The existing app experience</div>
+      <div class="cs-img-gallery gallery-small">
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-driver-app/images/ad-old-dropoff.png" alt="Old app dropoff screen">
+        </div>
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-driver-app/images/ad-old-assignment.png" alt="Old app assignment screen">
+        </div>
+      </div>
+    </div>
+    <div class="cs-body" style="margin-top:2rem;">
+      <p>The breakdown wasn't just navigation or a routing volume issue. It was lifecycle clarity. We needed to explicitly map the lifecycle of a delivery with workflows for each state.</p>
+      <p>This was especially important because the Driver App sat in the middle of a live, multi-spoke ecosystem of products (Warehouse App, Dispatch App, Client App, Routing Algorithm). Every driver action triggered operational consequences elsewhere. This required designing the app as a coordination layer, not as a standalone tool.</p>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">03 — Delivery Lifecycle</div>
+    <h2 class="cs-h2">Mapping the full driver shift from pickup to close</h2>
+    <div class="cs-body"><p>Before designing any screens, we mapped the complete delivery lifecycle. This revealed 10 distinct states a package could be in which gave insight into which states had no explicit workflows.</p></div>
+    <div class="cs-flow" style="margin-top:1.5rem;flex-wrap:wrap;gap:.5rem;">
+      <div class="cs-flow-box">Available</div>
+      <div class="cs-flow-arrow">→</div>
+      <div class="cs-flow-box">Claimed</div>
+      <div class="cs-flow-arrow">→</div>
+      <div class="cs-flow-box">Active</div>
+      <div class="cs-flow-arrow">→</div>
+      <div class="cs-flow-box highlight">Loading</div>
+      <div class="cs-flow-arrow">→</div>
+      <div class="cs-flow-box">In Transit</div>
+      <div class="cs-flow-arrow">→</div>
+      <div class="cs-flow-box">Delivered/Failed</div>
+      <div class="cs-flow-arrow">→</div>
+      <div class="cs-flow-box highlight">Reattempt</div>
+      <div class="cs-flow-arrow">→</div>
+      <div class="cs-flow-box highlight">Return</div>
+      <div class="cs-flow-arrow">→</div>
+      <div class="cs-flow-box">Completed</div>
+    </div>
+    <div style="font-size:.8rem;color:var(--accent);margin-top:.5rem;">⚠ Steps with high friction or no explicit workflows</div>
+    <div class="cs-body" style="margin-top:1.5rem;flex-wrap:wrap;gap:.5rem;"><p>Instead of reacting to errors, I designed predictable workflows for each state. In order to do this, I made sure that each state was created with the following:</p>
+      <ul class="cs-list" style="max-width:640px;margin:1.25rem 0;">
+        <li>Clear entry requirements</li>
+        <li>Defined exit conditions</li>
+        <li>Guardrails</li>
+        <li>Failure handling paths</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">04 — Design Changes · Change 1</div>
+    <h2 class="cs-h2">Designing a workflow for inevitable failed deliveries</h2>
+    <div class="cs-body"><p>The original app accounted for the successful delivery path very clearly. However, failure is not an edge case in last mile logistics. It is an ingrained part of the system. So it was important to create explicit workflows to guide drivers on how they should handle these situations.</p></div>
+    <div class="cs-two-col">
+      <div style="display:flex;flex-direction:column;">
+        <div class="cs-col-label">Automatic reattempt logic</div>
+        <div class="cs-body" style="margin-top:.75rem;">
+          <p>All failed deliveries are compiled at the end for reattempts. Instead of failures getting lost in the system, this explicitly allows the driver to readdress failures that happened earlier in their route. This explicit screen seamlessly flows into the delivery pattern for drivers to reattempt the deliveries.</p>
+        </div>
+        <div style="margin-top:auto;padding-top:1.25rem;">
+          <div class="cs-img-placeholder cs-media clickable" style="aspect-ratio:4/3;">
+            <img src="../case-studies/axlehire-driver-app/images/ad-reattempt.png" alt="Automatic reattempt screen">
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <div class="cs-col-label">Return workflow</div>
+        <div class="cs-body" style="margin-top:.75rem;">
+          <p>For routes that have failed deliveries even after reattempts, a workflow was explicitly created for these packages to be returned to the warehouse. This ensured that every failed delivery for the day makes it back to the warehouse and reattempted the next day if possible.</p>
+        </div>
+        <div style="margin-top:auto;padding-top:1.25rem;">
+          <div class="cs-img-placeholder cs-media clickable" style="aspect-ratio:4/3;">
+            <img src="../case-studies/axlehire-driver-app/images/ad-return.png" alt="Return workflow screen">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-impact">
+    <div class="cs-impact-inner">
+      <div class="cs-impact-label">Impact — Change 1</div>
+      <div class="cs-impact-stats">
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>~30%</em></div>
+          <div class="cs-impact-desc">Increase in successfully reattempted deliveries</div>
+        </div>
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>~70%</em></div>
+          <div class="cs-impact-desc">Decrease in lost packages after failed attempts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">04 — Design Changes · Change 2</div>
+    <h2 class="cs-h2">Embedding scanning into the infrastructure</h2>
+    <div class="cs-body">
+      <p>When analyzing the effects of our growth, we identified that inbound processes did not collapse under the weight of increased volume. It was due to the fact that our warehouse app had a scanning device that utilized our label's QR codes. It brought on the idea to use the same uniquely identifiable QR codes for our drivers as well.</p>
+      <p>Previously, drivers had to manually verify their packages one by one. It was a very taxing process especially at the warehouses where drivers were dealing with an average of 24 packages per delivery route. This was slow and error-prone. It harbored a lot of pit falls where packages were discovered to be missing or damaged too late in the route.</p>
+      <p>Here you can see the new pick up process in action:</p>
+    </div>
+    <div class="cs-before-after" style="margin-top:1.5rem;">
+      <div>
+        <div style="font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.75rem;">Before — Manual verification</div>
+        <div class="cs-video-placeholder cs-media clickable">
+          <video autoplay loop muted playsinline src="../case-studies/axlehire-driver-app/images/ad-old-pickup.mov"></video>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#3B5BDB;margin-bottom:.75rem;">After — QR scanning</div>
+        <div class="cs-video-placeholder cs-media clickable">
+          <video autoplay loop muted playsinline src="../case-studies/axlehire-driver-app/images/ad-new-pickup.mov"></video>
+        </div>
+      </div>
+    </div>
+    <ul class="cs-list" style="max-width:640px;margin:1.25rem 0;">
+      <li>The scanning system automatically identifies each package and references them to the manifest</li>
+      <li>Missing or misplaced packages are identified immediately</li>
+      <li>Drivers are able to accurately mark damaged packages</li>
+      <li>Reduced pickup time from hours to minutes</li>
+    </ul>
+    <div class="cs-body" style="margin-top:1.5rem;flex-wrap:wrap;gap:.5rem;">
+      <p>The implementation of scanning moved the burden of manual package verification from the driver to the app. Drivers could rely on the app to confirm the packages in their route and save time. This ensured that most delivery issues were prevented early in the delivery route.</p>
+    </div>
+    <div style="margin-top:2rem;max-width:1200px;">
+      <div style="font-size:.6875rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.75rem;">Scanning workflow screens — Pickup</div>
+      <div class="cs-img-gallery" style="grid-template-columns:repeat(3,1fr);">
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-driver-app/images/ad-pickup-scanner.png" alt="Pickup scanner">
+        </div>
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-driver-app/images/ad-scan-manifest.png" alt="Scan manifest">
+        </div>
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-driver-app/images/ad-damaged-modal.png" alt="Damaged package modal">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:3.5rem;max-width:1200px;">
+      <div style="font-size:.6875rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.75rem;">Scanning workflow screens — Dropoff</div>
+      <div class="cs-body" style="margin-top:0;">
+        <p>This was a feature that not only completely changed the pickup workflow, but it was a feature that could also be implemented into the entire drop off process. The scanning architecture was implemented into the drop offs to ensure the accuracy of the scaling workflow and business.</p>
+      </div>
+      <div class="cs-img-gallery" style="grid-template-columns:repeat(3,1fr);">
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-driver-app/images/ad-dropoff.png" alt="Dropoff screen">
+        </div>
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-driver-app/images/ad-dropoff-scanner.png" alt="Dropoff scanner">
+        </div>
+        <div class="cs-img-placeholder cs-media clickable">
+          <img src="../case-studies/axlehire-driver-app/images/ad-dropoff-location.png" alt="Dropoff location">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-impact">
+    <div class="cs-impact-inner">
+      <div class="cs-impact-label">Impact — Change 2</div>
+      <div class="cs-impact-stats">
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>36%</em></div>
+          <div class="cs-impact-desc">Faster pickup times</div>
+        </div>
+        <div class="cs-impact-stat">
+          <div class="cs-impact-num"><em>~13%</em></div>
+          <div class="cs-impact-desc">Decrease in average time to complete a delivery route</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section reveal">
+    <div class="cs-section-num">04 — Design Changes · Change 3</div>
+    <h2 class="cs-h2">Behavioral guardrails</h2>
+    <div class="cs-body">
+      <p>One of AxleHire's selling points was our world class routing algorithm which was able to take into account road closures due to construction or events, traffic patterns, etc. It ingested all of our clients' deliveries for the week and was able to produce any number of the most optimal and efficient routes depending on our fleet manifest.</p>
+      <p>This however is not emphasized to the drivers. So we observed that a lot of our drivers were completing the delivery route out of order believing that they can complete it faster to take on more delivery routes to earn more.</p>
+      <p>We created some guardrails to combat this behavior, show the reasoning behind our routes, and ultimately grow trust in our system that we would give them the most optimal route.</p>
+    </div>
+    <ul class="cs-list" style="max-width:640px;margin:1.25rem 0;">
+      <li>1. Rest of the route is displayed in order with the map</li>
+      <li>2. App calculates the new route if the newly selected stop is switched to the next stop</li>
+      <li>3. New route is displayed with the adjusted time and new estimated time to completion</li>
+    </ul>
+    <div style="margin-top:2rem;">
+      <div class="cs-img-placeholder cs-media transparent clickable" style="aspect-ratio:16/9;">
+        <img src="../case-studies/axlehire-driver-app/images/ad-guardrail.png" alt="Behavioral guardrails interface">
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-reflection">
+    <div class="cs-reflection-inner reveal">
+      <div class="cs-section-num" style="padding:0;margin-bottom:.5rem;">06 — Reflection</div>
+      <h2 class="cs-h2">The right friction can only be found in the field</h2>
+      <div class="cs-body">
+        <p>The driver app was the most operationally constrained design project I've worked on. Every interaction had a real-world cost — a second of hesitation at a door, a missed tap in a stop, a wrong status update that became a client escalation. Designing for people who are moving fast, outdoors, under time pressure, with one hand full is a fundamentally different discipline than designing for office software.</p>
+        <p>The behavioral guardrails section was the most contentious part of the project internally. Operations wanted more guardrails; drivers wanted fewer. The resolution, friction only at failure-prone moments, invisible everywhere else, came directly from ride-alongs, not from a conference room. That's the lesson I carry: the right level of friction can only be calibrated in the field.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-name">Saeam Kwon</div>
+    <a class="footer-linkedin" href="https://linkedin.com" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <p class="footer-copy">© 2026 by Saeam Kwon.</p>
+  </footer>
+
+<!-- ══════════ LIGHTBOX ══════════ -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+</div>
+
+<script src="../scripts/main.js"></script>
+</body>
+</html>

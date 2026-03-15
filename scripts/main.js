@@ -1,108 +1,91 @@
-/* ── Page switching ─────────────────────────────────────────── */
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  document.getElementById('navWork').classList.toggle('active', id === 'home' || id.startsWith('case-'));
-  document.getElementById('navAbout').classList.toggle('active', id === 'about');
-  window.scrollTo({ top: 0, behavior: 'instant' });
-  setTimeout(observeReveal, 50);
-}
+/* ── Active nav state ──────────────────────────────────────── */
+(function setActiveNav() {
+  var path = window.location.pathname;
+  var navWork = document.getElementById('navWork');
+  var navAbout = document.getElementById('navAbout');
+  if (navWork) navWork.classList.toggle('active', path === '/' || path === '/index.html' || path.indexOf('/grail-') === 0 || path.indexOf('/axlehire-') === 0);
+  if (navAbout) navAbout.classList.toggle('active', path.indexOf('/about') === 0);
+})();
 
-/* ── Password gate ──────────────────────────────────────────── */
-const PROTECTED = ['case-telemedicine', 'case-clinical'];
-const PW        = 'welcometograil';
-const unlocked  = new Set();
+/* ── Password gate (for protected pages) ──────────────────── */
+(function initPasswordGate() {
+  var pwOverlay = document.getElementById('pwOverlay');
+  var pwInput   = document.getElementById('pwInput');
+  var pwError   = document.getElementById('pwError');
+  var pwSubmit  = document.getElementById('pwSubmit');
+  var pwCancel  = document.getElementById('pwCancel');
+  var content   = document.getElementById('protectedContent');
 
-const pwOverlay = document.getElementById('pwOverlay');
-const pwInput   = document.getElementById('pwInput');
-const pwError   = document.getElementById('pwError');
-const pwSubmit  = document.getElementById('pwSubmit');
-const pwCancel  = document.getElementById('pwCancel');
-let   pendingPage = null;
+  if (!pwOverlay || !content) return;
 
-function tryPage(id) {
-  if (!PROTECTED.includes(id) || unlocked.has(id)) {
-    showPage(id);
-    return;
+  var PW = 'welcometograil';
+
+  function unlock() {
+    if (pwInput.value === PW) {
+      pwOverlay.classList.remove('open');
+      content.style.display = '';
+      setTimeout(observeReveal, 50);
+      // Re-init lightbox for newly visible content
+      initLightbox();
+    } else {
+      pwInput.classList.add('error');
+      pwError.classList.add('show');
+      pwInput.value = '';
+      setTimeout(function() { pwInput.classList.remove('error'); }, 400);
+      setTimeout(function() { pwInput.focus(); }, 80);
+    }
   }
-  pendingPage = id;
-  pwInput.value = '';
-  pwInput.classList.remove('error');
-  pwError.classList.remove('show');
-  pwOverlay.classList.add('open');
-  setTimeout(() => pwInput.focus(), 80);
-}
 
-function closePwModal() {
-  pwOverlay.classList.remove('open');
-  pendingPage = null;
-}
-
-function attemptUnlock() {
-  if (pwInput.value === PW) {
-    const targetPage = pendingPage;
-    unlocked.add(targetPage);
-    closePwModal();
-    showPage(targetPage);
-  } else {
-    pwInput.classList.add('error');
-    pwError.classList.add('show');
-    pwInput.value = '';
-    setTimeout(() => pwInput.classList.remove('error'), 400);
-    setTimeout(() => pwInput.focus(), 80);
-  }
-}
-
-pwSubmit.addEventListener('click', attemptUnlock);
-pwCancel.addEventListener('click', closePwModal);
-pwOverlay.addEventListener('click', e => { if (e.target === pwOverlay) closePwModal(); });
-pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') attemptUnlock(); });
+  pwSubmit.addEventListener('click', unlock);
+  pwInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') unlock(); });
+  setTimeout(function() { pwInput.focus(); }, 80);
+})();
 
 /* ── Nav scroll ─────────────────────────────────────────────── */
-const mainNav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  mainNav.classList.toggle('scrolled', window.scrollY > 10);
-}, { passive: true });
+var mainNav = document.getElementById('mainNav');
+if (mainNav) {
+  window.addEventListener('scroll', function() {
+    mainNav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+}
 
 /* ── Hamburger ──────────────────────────────────────────────── */
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-});
-function closeMobile() {
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
+var hamburger = document.getElementById('hamburger');
+var mobileMenu = document.getElementById('mobileMenu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
 }
 
 /* ── Scroll reveal ──────────────────────────────────────────── */
-let revealObserver;
+var revealObserver;
 function observeReveal() {
   if (revealObserver) revealObserver.disconnect();
-  revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.page.active .reveal').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
 }
 observeReveal();
 
 /* ── Lightbox ──────────────────────────────────────────────── */
-const lbOverlay = document.getElementById('lightboxOverlay');
-const lbContent = document.getElementById('lightboxContent');
-const lbClose   = document.getElementById('lightboxClose');
+var lbOverlay = document.getElementById('lightboxOverlay');
+var lbContent = document.getElementById('lightboxContent');
+var lbClose   = document.getElementById('lightboxClose');
 
 function openLightbox(el) {
   lbContent.innerHTML = '';
-  const img = el.querySelector('img');
-  const vid = el.querySelector('video');
+  var img = el.querySelector('img');
+  var vid = el.querySelector('video');
   if (img) {
-    const clone = document.createElement('img');
+    var clone = document.createElement('img');
     clone.src = img.src;
     clone.alt = img.alt || '';
     lbContent.appendChild(clone);
   } else if (vid) {
-    const clone = document.createElement('video');
+    var clone = document.createElement('video');
     clone.src = vid.src;
     clone.autoplay = true;
     clone.loop = true;
@@ -111,7 +94,7 @@ function openLightbox(el) {
     clone.controls = true;
     lbContent.appendChild(clone);
   } else {
-    return; // no media yet (placeholder), don't open
+    return;
   }
   lbOverlay.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -120,25 +103,31 @@ function openLightbox(el) {
 function closeLightbox() {
   lbOverlay.classList.remove('open');
   document.body.style.overflow = '';
-  const vid = lbContent.querySelector('video');
+  var vid = lbContent.querySelector('video');
   if (vid) vid.pause();
   lbContent.innerHTML = '';
 }
 
-document.querySelectorAll('.cs-media.clickable').forEach(el => {
-  el.addEventListener('click', () => openLightbox(el));
-});
-lbClose.addEventListener('click', closeLightbox);
-lbOverlay.addEventListener('click', e => { if (e.target === lbOverlay) closeLightbox(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && lbOverlay.classList.contains('open')) closeLightbox(); });
+function initLightbox() {
+  document.querySelectorAll('.cs-media.clickable').forEach(function(el) {
+    el.addEventListener('click', function() { openLightbox(el); });
+  });
+}
+initLightbox();
+
+if (lbClose) lbClose.addEventListener('click', closeLightbox);
+if (lbOverlay) lbOverlay.addEventListener('click', function(e) { if (e.target === lbOverlay) closeLightbox(); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && lbOverlay && lbOverlay.classList.contains('open')) closeLightbox(); });
 
 /* ── Custom cursor ──────────────────────────────────────────── */
-const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top  = e.clientY + 'px';
-});
-document.querySelectorAll('a, button, .cs-media.clickable').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('expanded'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('expanded'));
-});
+var cursor = document.getElementById('cursor');
+if (cursor) {
+  document.addEventListener('mousemove', function(e) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top  = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button, .cs-media.clickable').forEach(function(el) {
+    el.addEventListener('mouseenter', function() { cursor.classList.add('expanded'); });
+    el.addEventListener('mouseleave', function() { cursor.classList.remove('expanded'); });
+  });
+}
