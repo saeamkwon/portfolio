@@ -815,6 +815,11 @@ section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
   border: none;
   box-shadow: none;
 }
+#page-case-driver .cs-img-placeholder:has(img),
+#page-case-driver .cs-video-placeholder:has(video) { max-width: 320px; margin-left: auto; margin-right: auto; }
+#page-case-driver .cs-img-gallery .cs-img-placeholder:has(img) { max-width: none; margin-left: 0; margin-right: 0; }
+#page-case-driver .cs-img-placeholder.transparent:has(img) { max-width: none; margin-left: 0; margin-right: 0; }
+#page-case-driver .cs-img-gallery.gallery-small .cs-img-placeholder:has(img) { max-width: 320px; margin-left: auto; margin-right: auto; }
 .cs-img-placeholder .placeholder-icon { font-size: 1.75rem; opacity: .4; }
 .cs-img-placeholder .placeholder-label {
   font-size: .7rem; font-weight: 500; letter-spacing: .06em;
