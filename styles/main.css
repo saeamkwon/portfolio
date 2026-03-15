@@ -819,7 +819,7 @@ section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
 
 .cs-img-gallery {
   display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 1rem; margin-top: 1.5rem;
+  gap: 2rem; margin-top: 1.5rem;
 }
 .cs-img-gallery .cs-img-placeholder { aspect-ratio: 4/3; }
 .cs-img-gallery .cs-img-placeholder:has(img) { aspect-ratio: auto !important; }
