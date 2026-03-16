@@ -263,7 +263,7 @@ section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
 }
 @media (hover: hover) {
   .work-card:hover {
-    background: #FAFAFA;
+    background: white;
     box-shadow: 0 12px 48px rgba(26,23,20,.08);
     z-index: 2; position: relative;
   }
