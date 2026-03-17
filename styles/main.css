@@ -520,6 +520,17 @@ section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
 .hobby-desc { font-size: .8125rem; color: var(--mid); font-weight: 300; line-height: 1.55; }
 
 /* ─── ABOUT ─────────────────────────────────────────────────── */
+.about-avatar-mobile {
+  display: none;
+  width: 190px; height: 190px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 1.25rem auto;
+}
+.about-avatar-mobile img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
 .about-hero {
   padding-top: calc(var(--nav-h) + clamp(3rem, 6vw, 5rem));
   padding-bottom: clamp(4rem, 7vw, 6rem);
@@ -1229,7 +1240,8 @@ footer {
   .side-quests-section .section-inner { padding: 0 clamp(1.5rem, 5vw, 4rem); }
 
   .about-hero { grid-template-columns: 1fr; }
-  .about-img-col { position: static; max-width: 300px; margin: 0 auto; }
+  .about-img-col { display: none; }
+  .about-avatar-mobile { display: block; }
   .about-text-col { text-align: center; }
   .hobbies-grid { grid-template-columns: repeat(2, 1fr); }
 
