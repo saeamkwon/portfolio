@@ -1226,6 +1226,7 @@ footer {
   .card-img { aspect-ratio: 16/9; height: auto; }
   .side-quest-card { flex: 0 0 340px; }
   .side-quests { margin-top: 3rem; margin-bottom: 3rem; }
+  .side-quests-section .section-inner { padding: 0 clamp(1.5rem, 5vw, 4rem); }
 
   .about-hero { grid-template-columns: 1fr; }
   .about-img-col { position: static; max-width: 300px; margin: 0 auto; }
