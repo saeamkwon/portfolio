@@ -329,7 +329,7 @@ section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
 .side-quests-section {
   padding: 0 0 5rem;
   margin-top: -2rem;
-  overflow: hidden;
+  overflow: clip;
   background: white;
 }
 .side-quests {

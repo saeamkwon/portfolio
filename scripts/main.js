@@ -119,6 +119,21 @@ if (lbClose) lbClose.addEventListener('click', closeLightbox);
 if (lbOverlay) lbOverlay.addEventListener('click', function(e) { if (e.target === lbOverlay) closeLightbox(); });
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && lbOverlay && lbOverlay.classList.contains('open')) closeLightbox(); });
 
+/* ── Side-quests scroll indicator ──────────────────────────── */
+(function initSideQuestsScroll() {
+  var track = document.querySelector('.side-quests-track');
+  var cue   = document.querySelector('.side-quests-scroll-cue');
+  if (!track || !cue) return;
+
+  function updateCue() {
+    var isScrollable = track.scrollWidth > track.clientWidth + 1;
+    cue.style.display = isScrollable ? '' : 'none';
+  }
+
+  updateCue();
+  window.addEventListener('resize', updateCue);
+})();
+
 /* ── Custom cursor ──────────────────────────────────────────── */
 var cursor = document.getElementById('cursor');
 if (cursor) {
